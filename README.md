@@ -1,7 +1,7 @@
 ## Olá! Eu sou o Vinícius Castro
 
-- 🔭 Atualmente sou Cientista de Dados
-- 🌱 Time Series, Machine Learning, Deep Learning
+- 🔭 Atualmente Cientista de Dados
+- 🌱 Time Series, Machine Learning & Deep Learning
 - 😄 Pronouns: ele/dele
 
 <div align="center">
