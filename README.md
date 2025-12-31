@@ -6,8 +6,9 @@
 
 <div align="center">
   <a href="https://github.com/castrovinicius">
-  <img height="130em" src="https://github-readme-stats.vercel.app/api?username=castrovinicius&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
-  <img height="130em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=castrovinicius&layout=compact&langs_count=7&theme=dark"/>
+    <img height="130em" src="https://github-readme-stats.vercel.app/api?username=castrovinicius&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+    <img height="130em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=castrovinicius&layout=compact&langs_count=7&theme=dark"/>
+  </a>
 </div>
 
 <div style="display: inline_block"><br>
@@ -19,9 +20,17 @@
   <img align="center" alt="Vini-Docker" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg">
 </div>
 
-##
-<div> 
-  <a href="https://www.linkedin.com/in/vsac/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
-<div> 
+<div align="center">
+  <!-- Snake animation com suporte a tema claro/escuro -->
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://github.com/castrovinicius/castrovinicius/output/github-contribution-grid-snake-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://github.com/castrovinicius/castrovinicius/output/github-contribution-grid-snake.svg">
+    <img alt="github contribution grid snake animation" src="https://github.com/castrovinicius/castrovinicius/output/github-contribution-grid-snake.svg">
+  </picture>
+</div>
 
-![Snake animation](https://github.com/castrovinicius/castrovinicius/blob/output/github-contribution-grid-snake.svg)
+<div align="center"> 
+  <a href="https://www.linkedin.com/in/vsac/" target="_blank">
+    <img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank">
+  </a>
+</div>
