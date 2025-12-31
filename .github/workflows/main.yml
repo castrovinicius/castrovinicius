@@ -1,25 +1,43 @@
-name: Generate Snake
+name: Generate Profile Assets
+
 on:
   schedule:
     - cron: "0 */12 * * *"
   workflow_dispatch:
+
 permissions:
   contents: write
-  pages: write
-  id-token: write
+
 jobs:
-  generate:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: Platane/snk@v3
-        id: snake-svg
+
+      # 1) Snake
+      - name: Generate snake animation
+        uses: Platane/snk@v3
         with:
           github_user_name: castrovinicius
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
-      - uses: crazy-max/ghaction-github-pages@v4
+
+      # 2) Stats + Top Langs
+      - name: Generate stats cards (static)
+        uses: github-readme-stats-action/github-readme-stats-action@v1
+        with:
+          username: castrovinicius
+          output_dir: dist
+          stats_card: true
+          top_langs_card: true
+          theme: dark
+          top_langs_layout: compact
+          top_langs_count: 7
+
+      # 3) Publica tudo no branch output
+      - name: Deploy to output branch
+        uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
           build_dir: dist
