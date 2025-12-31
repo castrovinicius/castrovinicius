@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1) Snake
+      # 1) Snake -> dist/
       - name: Generate snake animation
         uses: Platane/snk@v3
         with:
@@ -23,19 +23,23 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 2) Stats + Top Langs
-      - name: Generate stats cards (static)
-        uses: github-readme-stats-action/github-readme-stats-action@v1
+      # 2) Stats card -> dist/
+      - name: Generate user stats card
+        uses: cicirello/user-statistician@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          username: castrovinicius
-          output_dir: dist
-          stats_card: true
-          top_langs_card: true
-          theme: dark
-          top_langs_layout: compact
-          top_langs_count: 7
+          image-file: dist/github-stats.svg
 
-      # 3) Publica tudo no branch output
+      # 3) Top langs card -> dist/
+      - name: Generate top languages card
+        uses: cicirello/user-statistician@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          image-file: dist/top-langs.svg
+
+      # 4) Publica
       - name: Deploy to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
