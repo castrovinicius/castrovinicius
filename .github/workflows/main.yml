@@ -1,46 +1,29 @@
-name: Generate Profile Assets
+name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 */12 * * *"
+    - cron: "0 */12 * * *"  # A cada 12 horas
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: write  # Necessário para push no branch output
 
 jobs:
-  build:
+  generate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4  # Necessário para criar arquivos
 
-      # 1) Snake -> dist/
       - name: Generate snake animation
         uses: Platane/snk@v3
+        id: snake-gif
         with:
           github_user_name: castrovinicius
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      # 2) Stats card -> dist/
-      - name: Generate user stats card
-        uses: cicirello/user-statistician@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          image-file: dist/github-stats.svg
-
-      # 3) Top langs card -> dist/
-      - name: Generate top languages card
-        uses: cicirello/user-statistician@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          image-file: dist/top-langs.svg
-
-      # 4) Publica
-      - name: Deploy to output branch
+      - name: Push to output branch
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: output
