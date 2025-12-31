@@ -21,7 +21,6 @@
 </div>
 
 <div align="center">
-  <!-- Snake animation com suporte a tema claro/escuro -->
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github.com/castrovinicius/castrovinicius/output/github-contribution-grid-snake-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://github.com/castrovinicius/castrovinicius/output/github-contribution-grid-snake.svg">
